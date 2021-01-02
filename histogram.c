@@ -1,3 +1,11 @@
+
+// Homework 1 
+// -HistogramA histogram is a representation ofnumerical data which groups data into binsof equal width. 
+// Each bin is plotted as a bar whose height corresponds to how many data points are in that bin. 
+// Bins are also sometimes called "intervals" or "buckets". Write a program, which will draw a histogram with 
+// a given number of bins, for a dataset taken from a file. You have to deliver/generate your own dataset, ie. 
+// by random number generation.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -40,6 +48,13 @@ int generate (int number, int *random, int columns) {
 }
 
 int write_to_file() {
+
+	FILE *file;
+	file = fopen("data.dat", "w");
+	for(int i = 0; i < number; ++i) {
+		fprintf(stderr, "%s\n", );
+	}
+	fclose(file)
 
 }
 
