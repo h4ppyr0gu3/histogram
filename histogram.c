@@ -47,14 +47,14 @@ int generate (int number, int *random, int columns) {
 	}
 }
 
-int write_to_file() {
+int write_to_file(int number) {
 
 	FILE *file;
 	file = fopen("data.dat", "w");
 	for(int i = 0; i < number; ++i) {
-		fprintf(stderr, "%s\n", );
+		fprintf(file, "%d\n",i);
 	}
-	fclose(file)
+	fclose(file);
 
 }
 
