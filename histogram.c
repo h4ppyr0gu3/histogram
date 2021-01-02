@@ -11,7 +11,7 @@
 #include <math.h>
 #include <time.h>
 
-int generate (int number, int *random, int columns);
+int *generate (int number, int columns);
 
 int main () {
 
@@ -25,7 +25,7 @@ int main () {
 	printf("how many columns would you like\nnumber of columns: ");
 	scanf("%d", &number_of_columns);
 
-	generate(number_of_values, values, number_of_columns);
+	values = generate(number_of_values, number_of_columns);
 	printf(".....................................................\n");
 
 	for(int i = 0; i < number_of_values; i++ ) {
@@ -34,28 +34,26 @@ int main () {
 	free(values);
 }
 
-int generate (int number, int *random, int columns) {
-
-  random = malloc(number * sizeof(int));
-
+int *generate (int number, int columns) {
+  int *random = malloc(number * sizeof(int));
 	srand(time(NULL));
 
 	for (int i = 0; i < number ; ++i) {
-		
 		random[i] = (double)rand()/RAND_MAX * (columns + 1);
 		printf("%d\n", (int)random[i]);
 	}
+
+	return random;
 }
 
 int write_to_file(int number) {
-
 	FILE *file;
 	file = fopen("data.dat", "w");
 	for(int i = 0; i < number; ++i) {
 		fprintf(file, "%d\n",i);
 	}
 	fclose(file);
-
+	return 0;
 }
 
 int sort_by_value (int number_of_values, int divider, int values[]) {
