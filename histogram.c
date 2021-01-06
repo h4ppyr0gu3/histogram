@@ -1,6 +1,7 @@
 /* David Rogers
 X-1983
-Histogram using gnuplot*/
+Histogram using gnuplot
+https://github.com/h4ppyr0gu3/histogram  */
 
 #include <stdio.h>
 #include <stdlib.h>
